@@ -24,6 +24,16 @@ function App() {
     },
   ]);
 
+  function onTaskClick(taskID) {
+    const newTasks = tasks.map((task) => {
+      if (task.id === taskID) {
+        return { ...task, isCompleted: !task.isCompleted };
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  }
+
   return (
     <div className="w-screen h-screen bg-slate-800 flex justify-center p-6">
       <div className="w-[500px] ">
@@ -31,7 +41,7 @@ function App() {
           Gerenciador de tarefas
         </h1>
         <AddTask />
-        <Tasks tasks={tasks} />
+        <Tasks tasks={tasks} onTaskClick={onTaskClick} />
       </div>
     </div>
   );

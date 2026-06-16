@@ -1,8 +1,20 @@
+import { Ellipsis } from "lucide-react";
+
 function Tasks(props) {
   return (
-    <ul>
+    <ul className="space-y-4 p-6 bg-slate-400 rounded-md shadow">
       {props.tasks.map((task) => (
-        <li>{task.title}</li>
+        <li key={task.id} className="flex gap-2">
+          <button
+            onClick={() => props.onTaskClick(task.id)}
+            className="bg-slate-500 w-full text-left text-white p-2 rounded-md"
+          >
+            {task.title}
+          </button>
+          <button className="bg-slate-500 p-2 text-white rounded-md">
+            <Ellipsis />
+          </button>
+        </li>
       ))}
     </ul>
   );
