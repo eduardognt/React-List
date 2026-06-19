@@ -15,7 +15,7 @@ function AddTask({ onAddTaskSubmit }) {
       />
       <input
         type="text"
-        placeholder="Descricao da tarefa..."
+        placeholder="Detalhe sua tarefa..."
         className="border border-slate-300 outline-slate-400 p-2 rounded-md"
         value={description}
         onChange={(event) => setDescription(event.target.value)}
