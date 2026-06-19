@@ -1,4 +1,4 @@
-import { Ellipsis, Trash2Icon } from "lucide-react";
+import { CheckSquare, CheckSquare2, Ellipsis, Trash2Icon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function Tasks({ tasks, onTaskClick, onClickRemoveTask }) {
@@ -17,8 +17,9 @@ function Tasks({ tasks, onTaskClick, onClickRemoveTask }) {
         <li key={task.id} className="flex gap-2">
           <button
             onClick={() => onTaskClick(task.id)}
-            className={`bg-slate-500 w-full text-left text-white p-2 rounded-md ${task.isCompleted && "line-through bg-slate-800"} `}
+            className={`bg-slate-500 w-full text-left text-white flex items-center gap-2 p-2 rounded-md ${task.isCompleted && "line-through bg-emerald-600"} `}
           >
+            {task.isCompleted && <CheckSquare2 />}
             {task.title}
           </button>
           <button
@@ -29,7 +30,7 @@ function Tasks({ tasks, onTaskClick, onClickRemoveTask }) {
           </button>
           <button
             onClick={() => onClickRemoveTask(task.id)}
-            className="bg-slate-500 p-2 text-white rounded-md"
+            className="bg-red-600 p-2 text-white rounded-md"
           >
             <Trash2Icon />
           </button>

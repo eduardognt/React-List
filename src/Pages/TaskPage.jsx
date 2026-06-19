@@ -13,7 +13,7 @@ function TaskPage() {
         <div className="flex justify-center relative mb-6">
           <button
             onClick={() => navigate(-1)}
-            className="absolute left-0 bottom-0 text-slate-100"
+            className="absolute left-0 bottom-0 text-yellow-400"
           >
             <MoveLeft />
           </button>
